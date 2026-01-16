@@ -1,0 +1,122 @@
+/* Container padding and basic setup */
+.order-add {
+    padding: 50px;
+    background-color: #fcfcfc;
+    min-height: 100vh;
+}
+
+.order.add h3 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Individual Order Item Card */
+.order-item {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
+    align-items: start;
+    gap: 30px;
+    border: 1px solid #ade8f4; /* Light blue border */
+    padding: 20px;
+    margin-bottom: 30px;
+    color: #454545;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+}
+
+/* The Parcel Icon */
+.order-item img {
+    width: 50px;
+}
+
+/* Food list styling */
+.order-item-food {
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Name and Address section */
+.order-item-name {
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.order-item-address {
+    line-height: 1.4;
+}
+
+.order-item-phone {
+    margin-top: 5px;
+    color: #555;
+}
+
+/* Total Price styling */
+.order-item-total {
+    font-weight: 600;
+    color: #ff4c24; /* Food app highlight color */
+}
+
+/* Dropdown Status Select */
+.order-item select {
+    padding: 12px 15px;
+  border: 2px solid #E0E0E0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3E2723;
+  background: #FFFFFF;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  max-width: 200px;
+}
+
+.order-item select:focus {
+    border-color: #FFD700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+}
+.order-item select:hover {
+  border-color: #FFD700;
+}
+
+.order-item select option[value="Food Processing"] {
+  background: #FFF3CD;
+  color: #856404;
+}
+.order-item select option[value="Out for delivery"] {
+  background: #D1ECF1;
+  color: #0C5460;
+}
+
+.order-item select option[value="Delivered"] {
+  background: #D4EDDA;
+  color: #155724;
+}
+
+/* Responsive adjustments for mobile/tablets */
+@media (max-width: 900px) {
+    .order-item {
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+        font-size: 12px;
+    }
+    .order-item select {
+        padding: 5px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .order-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .order.add {
+        padding: 20px;
+    }
+}

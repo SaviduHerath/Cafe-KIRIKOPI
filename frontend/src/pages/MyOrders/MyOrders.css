@@ -1,0 +1,240 @@
+/* MyOrders.css */
+
+.my-orders {
+  padding: 100px 8%;
+  background: #FFF8F0;
+  min-height: 100vh;
+}
+
+.my-orders h2 {
+  color: #3E2723;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.my-orders .container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.my-orders-order {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  background: #FFFFFF;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.my-orders-order:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.2);
+  border-left: 4px solid #FFD700;
+}
+
+.my-orders-order img {
+  width: 50px;
+  height: 50px;
+}
+
+.my-orders-order p {
+  color: #333333;
+  font-size: 15px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.my-orders-order p:first-of-type {
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.my-orders-order p span {
+  color: #FFD700;
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.my-orders-order button {
+  background: #FFD700;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.my-orders-order button:hover {
+  background: #FFC700;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.my-orders-order button:active {
+  transform: translateY(0);
+}
+
+/* Status Indicators */
+.my-orders-order p:nth-child(5) {
+  display: flex;
+  align-items: center;
+  color: #3E2723;
+  font-weight: 600;
+}
+
+/* Empty State */
+.my-orders-empty {
+  text-align: center;
+  padding: 80px 20px;
+  background: #FFFFFF;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.my-orders-empty h3 {
+  color: #3E2723;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.my-orders-empty p {
+  color: #666666;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.my-orders-empty button {
+  background: #FFD700;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.my-orders-empty button:hover {
+  background: #FFC700;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .my-orders {
+    padding: 80px 5%;
+  }
+
+  .my-orders h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .my-orders-order {
+    grid-template-columns: 0.5fr 1.5fr 0.8fr 0.8fr 1.2fr 1fr;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .my-orders-order p {
+    font-size: 14px;
+  }
+
+  .my-orders-order button {
+    font-size: 13px;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .my-orders {
+    padding: 70px 5%;
+  }
+
+  .my-orders h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .my-orders .container {
+    gap: 20px;
+  }
+
+  .my-orders-order {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .my-orders-order img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .my-orders-order p {
+    font-size: 14px;
+  }
+
+  .my-orders-order p:first-of-type {
+    font-size: 13px;
+  }
+
+  .my-orders-order button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-orders {
+    padding: 60px 5%;
+  }
+
+  .my-orders h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .my-orders .container {
+    gap: 15px;
+  }
+
+  .my-orders-order {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .my-orders-order img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .my-orders-order p {
+    font-size: 13px;
+  }
+
+  .my-orders-order p:first-of-type {
+    font-size: 12px;
+  }
+
+  .my-orders-order p span {
+    font-size: 16px;
+  }
+
+  .my-orders-order button {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
