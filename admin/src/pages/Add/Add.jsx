@@ -5,7 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const Add = ({url}) => {
-  
+  const apiUrl = url || "http://localhost:4000";
 
   const [image, setImage] = useState(false);
 
@@ -31,7 +31,7 @@ const Add = ({url}) => {
     formData.append("category", data.category);
     formData.append("image", image);
 
-    const response = await axios.post(`${url}/api/food/add`, formData);
+    const response = await axios.post(`${apiUrl}/api/food/add`, formData);
     if (response.data.success) {
       setData({
         name: "",
@@ -102,6 +102,7 @@ const Add = ({url}) => {
               <option value="Pure Veg">Pure Veg</option>
               <option value="Pasta">Pasta</option>
               <option value="Noodles">Noodles</option>
+              <option value="Pizza">Pizza</option>
             </select>
           </div>
           <div className="add-price flex-col">

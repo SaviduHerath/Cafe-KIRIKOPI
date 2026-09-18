@@ -1,5 +1,7 @@
 import jwt from 'jsonwebtoken'
 
+const JWT_SECRET = process.env.JWT_SECRET || "random#secret";
+
 const authMiddleware = async (req, res, next) => {
     const { token } = req.headers;
     
@@ -8,7 +10,7 @@ const authMiddleware = async (req, res, next) => {
     }
 
     try {
-        const token_decode = jwt.verify(token, process.env.JWT_SECRET);
+        const token_decode = jwt.verify(token, JWT_SECRET);
         
         // --- THIS IS THE KEY FIX ---
         // If req.body is undefined, initialize it as an empty object

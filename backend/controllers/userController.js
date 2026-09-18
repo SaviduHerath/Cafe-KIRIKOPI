@@ -3,6 +3,8 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import validator from "validator";
 
+const JWT_SECRET = process.env.JWT_SECRET || "random#secret";
+
 //login user
 const loginUser = async (req, res) => {
     const {email,password} =req.body;
@@ -31,7 +33,7 @@ const loginUser = async (req, res) => {
 };
 
 const createToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET);
+  return jwt.sign({ id }, JWT_SECRET);
 };
 
 //register user

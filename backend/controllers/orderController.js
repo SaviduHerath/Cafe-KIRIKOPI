@@ -3,7 +3,7 @@ import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js"
 import Stripe from "stripe"
 
-const stripe  = new Stripe(process.env.STRIPE_SECRET_KEY)
+const stripe = process.env.STRIPE_SECRET_KEY ? new Stripe(process.env.STRIPE_SECRET_KEY) : null;
 
 
 //placing user order for frontend
@@ -21,6 +21,10 @@ const placeOrder = async (req,res) => {
         })
         await newOrder.save();
         await userModel.findByIdAndUpdate(req.body.userId,{cartData:{}})
+
+        if (!stripe) {
+            return res.json({ success: false, message: "Stripe is not configured yet." });
+        }
 
         const line_items = req.body.items.map((item)=>({
             price_data:{
